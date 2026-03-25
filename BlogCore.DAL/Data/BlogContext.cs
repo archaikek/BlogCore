@@ -12,9 +12,9 @@ public class BlogContext : DbContext
 
     // Definicje tabel w bazie danych 
     public DbSet<Post> Posts { get; set; } = null!;
-	public DbSet<Comment> Comments { get; set; } = null!;
+    public DbSet<Comment> Comments { get; set; } = null!;
 
-	protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // Konfiguracja modelu Post 
         modelBuilder.Entity<Post>(entity =>
