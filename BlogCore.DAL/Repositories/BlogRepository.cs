@@ -7,40 +7,40 @@ using System.Runtime.InteropServices.Marshalling;
 
 public class BlogRepository
 {
-	private readonly BlogContext _context;
+    private readonly BlogContext _context;
 
-	public BlogRepository(BlogContext context)
-	{
-		_context = context;
-	}
+    public BlogRepository(BlogContext context)
+    {
+        _context = context;
+    }
 
-	public void AddPost(Post post)
-	{
-		_context.Posts.Add(post);
-		_context.SaveChanges(); // Kluczowe dla utrwalenia danych w kontenerze
-	}
-	public IEnumerable<Post> GetAllPosts()
-	{
-		return _context.Posts.ToList();
-	}
-	public void DeletePost(Post post)
-	{
-		_context.Posts.Remove(post);
-		_context.SaveChanges(); // ok enough trolling
-	}
-	public void DeletePostById(int postId)
-	{
-		Post post = _context.Posts.Find(postId)!;
-		_context.Posts.Remove(post);
-	}
+    public void AddPost(Post post)
+    {
+        _context.Posts.Add(post);
+        _context.SaveChanges(); // Kluczowe dla utrwalenia danych w kontenerze
+    }
+    public IEnumerable<Post> GetAllPosts()
+    {
+        return _context.Posts.ToList();
+    }
+    public void DeletePost(Post post)
+    {
+        _context.Posts.Remove(post);
+        _context.SaveChanges(); // ok enough trolling
+    }
+    public void DeletePostById(int postId)
+    {
+        Post post = _context.Posts.Find(postId)!;
+        _context.Posts.Remove(post);
+    }
 
-	public void AddComment(Comment comment)
-	{
-		_context.Comments.Add(comment);
-		_context.SaveChanges();
-	}
-	public IEnumerable<Comment> GetCommentsByPostId(int postId)
-	{
-		return _context.Comments.Where(c => c.PostId == postId).ToList();
-	}
+    public void AddComment(Comment comment)
+    {
+        _context.Comments.Add(comment);
+        _context.SaveChanges();
+    }
+    public IEnumerable<Comment> GetCommentsByPostId(int postId)
+    {
+        return _context.Comments.Where(c => c.PostId == postId).ToList();
+    }
 }

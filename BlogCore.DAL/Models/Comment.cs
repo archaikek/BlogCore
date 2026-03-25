@@ -5,13 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 public class Comment
 {
-	[Key]
-	public int Id { get; set; }
+    [Key]
+    public int Id { get; set; }
 
-	[ForeignKey("Post")]
-	public int PostId { get; set; } = -1;
-	public Post Post { get; set; } = null!;
+    [ForeignKey("Post")]
+    public int PostId { get; set; } = -1;
+    public Post Post { get; set; } = null!;
 
-	[Required]
-	public string Content { get; set; } = string.Empty;
+    [Required]
+    public string Content { get; set; } = string.Empty;
 }
