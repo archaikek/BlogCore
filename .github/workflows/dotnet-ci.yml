@@ -1,6 +1,6 @@
 name: .NET CI Pipeline
 
-# Definicja wyzwalaczy (Triggers)
+# Definicja wyzwalaczy (Triggers) 
 on:
   push:
     branches: [ "main" ]
