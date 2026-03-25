@@ -14,7 +14,6 @@ public class BlogContext : DbContext
     public DbSet<Post> Posts { get; set; } = null!;
 	public DbSet<Comment> Comments { get; set; } = null!;
 
-
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // Konfiguracja modelu Post 
