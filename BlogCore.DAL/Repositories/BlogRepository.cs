@@ -26,7 +26,7 @@ public class BlogRepository
     public void DeletePost(Post post)
     {
         _context.Posts.Remove(post);
-        //_context.SaveChanges(); // trololo
+        _context.SaveChanges(); // ok enough trolling
     }
     public void DeletePostById(int postId)
     {
